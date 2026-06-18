@@ -1,0 +1,6 @@
+# Default language
+/ /es/ 302
+
+# Language-specific SPA fallbacks. Root assets remain outside these rules.
+/en/* /en/index.html 200
+/es/* /es/index.html 200

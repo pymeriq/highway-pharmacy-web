@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://highwaypharmacypr.com/es/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/es/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/en/" />
+  </url>
+  <url>
+    <loc>https://highwaypharmacypr.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/es/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/en/" />
+  </url>
+  <url>
+    <loc>https://highwaypharmacypr.com/es/servicios</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/es/servicios" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/en/services" />
+  </url>
+  <url>
+    <loc>https://highwaypharmacypr.com/en/services</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/es/servicios" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/en/services" />
+  </url>
+  <url>
+    <loc>https://highwaypharmacypr.com/es/historia</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/es/historia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/en/history" />
+  </url>
+  <url>
+    <loc>https://highwaypharmacypr.com/en/history</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/es/historia" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/en/history" />
+  </url>
+  <url>
+    <loc>https://highwaypharmacypr.com/es/contacto</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/es/contacto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/en/contact" />
+  </url>
+  <url>
+    <loc>https://highwaypharmacypr.com/en/contact</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/es/contacto" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/en/contact" />
+  </url>
+  <url>
+    <loc>https://highwaypharmacypr.com/es/promociones</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/es/promociones" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/en/promotions" />
+  </url>
+  <url>
+    <loc>https://highwaypharmacypr.com/en/promotions</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/es/promociones" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/en/promotions" />
+  </url>
+</urlset>
