@@ -908,7 +908,11 @@ textarea {
 .toys-copy {
   display: grid;
   align-content: center;
-  gap: 24px;
+  gap: 22px;
+}
+
+.toys-eyebrow {
+  margin-bottom: -4px;
 }
 
 .toys-title-art {
@@ -960,6 +964,16 @@ textarea {
   font-family: "DM Serif Display", Georgia, serif;
   font-size: 33px;
   font-weight: 400;
+}
+
+.department-stats .community-stat strong {
+  letter-spacing: -0.035em;
+}
+
+.department-stats .community-stat span {
+  font-size: 11px;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .department-stats span {
@@ -1810,14 +1824,16 @@ textarea {
     box-shadow: -20px 0 60px rgba(3, 29, 55, 0.15);
     overflow-y: auto;
     overscroll-behavior: contain;
-    transform: translateX(100%);
+    opacity: 0;
+    transform: translateY(-10px);
     visibility: hidden;
     pointer-events: none;
-    transition: transform 260ms ease, visibility 0s linear 260ms;
+    transition: opacity 220ms ease, transform 260ms ease, visibility 0s linear 260ms;
   }
 
   .menu-open .site-nav {
-    transform: translateX(0);
+    opacity: 1;
+    transform: translateY(0);
     visibility: visible;
     pointer-events: auto;
     transition-delay: 0s;
@@ -1964,8 +1980,8 @@ textarea {
   .hero-description {
     max-width: 450px;
     color: rgba(255, 255, 255, 0.9);
-    font-size: 14px;
-    line-height: 1.75;
+    font-size: 14.5px;
+    line-height: 1.72;
   }
 
   .hero-hours,
@@ -2013,6 +2029,15 @@ textarea {
     padding-block: 75px;
   }
 
+  :root {
+    --mobile-section-title: clamp(36px, 10.7vw, 48px);
+    --mobile-department-title: clamp(34px, 9.8vw, 45px);
+    --mobile-card-title: 28px;
+    --mobile-body: 13px;
+    --mobile-body-line: 1.78;
+    --mobile-eyebrow: 10px;
+  }
+
   .split-intro,
   .department-grid,
   .story-grid,
@@ -2027,11 +2052,29 @@ textarea {
 
   .section-heading h2,
   .section-top h2,
-  .department-copy h2,
   .story-heading h2,
   .contact-copy h2,
   .shop-card h2 {
-    font-size: clamp(40px, 12.5vw, 56px);
+    font-size: var(--mobile-section-title);
+    line-height: 1;
+    letter-spacing: -0.028em;
+  }
+
+  .department-copy h2 {
+    max-width: 390px;
+    font-size: var(--mobile-department-title);
+    line-height: 1.03;
+    letter-spacing: -0.026em;
+  }
+
+  .eyebrow {
+    gap: 9px;
+    font-size: var(--mobile-eyebrow);
+    letter-spacing: 0.16em;
+  }
+
+  .eyebrow::before {
+    width: 22px;
   }
 
   .service-feature-grid {
@@ -2055,8 +2098,8 @@ textarea {
   }
 
   .feature-card p {
-    font-size: 13px;
-    line-height: 1.75;
+    font-size: var(--mobile-body);
+    line-height: var(--mobile-body-line);
   }
 
   .feature-main p,
@@ -2067,22 +2110,22 @@ textarea {
 
   .feature-main li {
     align-items: flex-start;
-    font-size: 11px;
-    line-height: 1.45;
+    font-size: 12px;
+    line-height: 1.5;
   }
 
   .card-kicker {
-    font-size: 10px !important;
+    font-size: var(--mobile-eyebrow) !important;
   }
 
   .feature-pill,
   .promo-label {
-    font-size: 9px;
+    font-size: 9.5px;
   }
 
   .mini-services span {
-    font-size: 10px;
-    line-height: 1.35;
+    font-size: 11px;
+    line-height: 1.4;
   }
 
   .intro-body p,
@@ -2090,9 +2133,36 @@ textarea {
   .section-summary,
   .story-heading > p,
   .contact-copy > p,
-  .pharmacist-card p {
-    font-size: 13px;
-    line-height: 1.8;
+  .pharmacist-card p,
+  .toys-copy p,
+  .promo-card p,
+  .timeline p,
+  .visit-card address,
+  .shop-card p {
+    font-size: var(--mobile-body);
+    line-height: var(--mobile-body-line);
+  }
+
+  .feature-card h3,
+  .promo-card h3,
+  .timeline h3,
+  .gift-gallery-heading h3 {
+    font-size: var(--mobile-card-title);
+    line-height: 1.1;
+  }
+
+  .department-stats {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .department-stats strong {
+    font-size: 31px;
+  }
+
+  .department-stats span {
+    font-size: 8.5px;
+    line-height: 1.25;
   }
 
   .department-visual {
@@ -2145,21 +2215,20 @@ textarea {
   }
 
   .toys-section {
-    padding-block: 65px;
+    padding-block: 72px;
   }
 
   .toys-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 28px;
+  }
+
+  .toys-copy {
+    gap: 16px;
   }
 
   .toys-title-art {
-    width: min(100%, 330px);
-  }
-
-  .toys-copy p {
-    font-size: 14px;
-    line-height: 1.8;
+    width: min(100%, 350px);
   }
 
   .toys-photo {
@@ -2180,13 +2249,21 @@ textarea {
     max-width: 100%;
   }
 
-  .promo-wide h3 {
-    font-size: 34px;
+  .promo-small {
+    min-height: 300px;
+    justify-content: flex-start;
+  }
+
+  .promo-small .round-icon {
+    margin-bottom: 20px;
+  }
+
+  .promo-small h3 {
+    margin: 11px 0 8px;
   }
 
   .promo-card p {
-    font-size: 13px;
-    line-height: 1.75;
+    margin: 0;
   }
 
   .promo-wide p {
@@ -2215,13 +2292,11 @@ textarea {
   }
 
   .timeline h3 {
-    font-size: 27px;
+    font-size: var(--mobile-card-title);
   }
 
   .timeline p {
     color: rgba(255, 255, 255, 0.68);
-    font-size: 12px;
-    line-height: 1.75;
   }
 
   .values-grid {
@@ -2260,21 +2335,20 @@ textarea {
 
   .contact-methods small,
   .visit-top small {
-    font-size: 9px;
+    font-size: 9.5px;
   }
 
   .contact-methods strong {
-    font-size: 13px;
+    font-size: 13.5px;
   }
 
   .visit-card address {
     color: rgba(255, 255, 255, 0.74);
-    font-size: 12px;
   }
 
   .hours-table div {
-    font-size: 11px;
-    line-height: 1.45;
+    font-size: 12px;
+    line-height: 1.5;
   }
 
   .form-row {
@@ -2315,18 +2389,18 @@ textarea {
 
   .footer-grid p,
   .footer-grid > div a {
-    font-size: 11px;
-    line-height: 1.7;
+    font-size: 11.5px;
+    line-height: 1.75;
   }
 
   .footer-grid h3 {
-    font-size: 9px;
+    font-size: 9.5px;
   }
 
   .footer-bottom {
     flex-direction: column;
     gap: 8px;
-    font-size: 10px;
+    font-size: 10.5px;
   }
 
   .mobile-actions {
