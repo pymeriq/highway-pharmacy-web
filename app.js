@@ -5,7 +5,7 @@ const content = {
     announcementOpen: "Abierto hoy",
     announcementClosed: "Cerrado hoy",
     announcementMessage: "Autofarmacia y entrega de medicamentos disponibles",
-    nav: { home: "Inicio", services: "Servicios", story: "Historia", promos: "Promociones", contact: "Contacto", shop: "Comprar en línea" },
+    nav: { home: "Inicio", services: "Servicios", story: "Historia", promos: "Promociones", contact: "Contacto", shop: "Próximamente: más formas de servirte" },
     openMenu: "Abrir menú",
     closeMenu: "Cerrar menú",
     heroEyebrow: "Tu farmacia de confianza en Santa Isabel",
@@ -29,7 +29,7 @@ const content = {
     pharmacyKicker: "Departamento de farmacia",
     pharmacyTitle: "Tu bienestar es nuestra prioridad.",
     pharmacyBody: "Atención farmacéutica profesional, personalizada y fácil de acceder.",
-    pharmacyList: ["Medicamentos recetados", "Sin receta", "Orientación farmacéutica", "Equipo médico", "Vitaminas", "Cuidado personal"],
+    pharmacyList: ["Medicamentos recetados", "Medicamentos OTC", "Orientación farmacéutica", "Equipo médico", "Vitaminas", "Cuidado personal"],
     viewServices: "Ver todos los servicios",
     driveKicker: "Rápido y conveniente",
     driveBody: "Nuestro servicio estilo servicarro te permite recoger tus medicamentos con la misma atención de confianza, sin tener que bajarte del auto.",
@@ -122,7 +122,7 @@ const content = {
     announcementOpen: "Open today",
     announcementClosed: "Closed today",
     announcementMessage: "Drive-through pharmacy and medication delivery available",
-    nav: { home: "Home", services: "Services", story: "Our Story", promos: "Promotions", contact: "Contact", shop: "Shop Online" },
+    nav: { home: "Home", services: "Services", story: "Our Story", promos: "Promotions", contact: "Contact", shop: "Coming soon: more ways to serve you" },
     openMenu: "Open menu",
     closeMenu: "Close menu",
     heroEyebrow: "Your trusted pharmacy in Santa Isabel",
@@ -263,7 +263,7 @@ const localizedSlugs = {
   story: { es: "historia", en: "history" },
   promos: { es: "promociones", en: "promotions" },
   contact: { es: "contacto", en: "contact" },
-  shop: { es: "comprar", en: "shop" }
+  shop: { es: "", en: "" }
 };
 const currentSlug = window.location.pathname.split("/").filter(Boolean)[1] || "";
 const currentPage = Object.entries(localizedSlugs).find(([, slugs]) => Object.values(slugs).includes(currentSlug))?.[0] || "home";
@@ -315,7 +315,7 @@ document.querySelectorAll("[data-nav]").forEach((element) => {
     contact: "#contact",
     shop: "#shop"
   };
-  element.href = `${localizedPath(locale, key)}${hashes[key]}`;
+  element.href = key === "shop" ? `${localizedPath(locale, "home")}#shop` : `${localizedPath(locale, key)}${hashes[key]}`;
 });
 
 document.querySelectorAll("[data-home-link]").forEach((element) => {
@@ -323,7 +323,7 @@ document.querySelectorAll("[data-home-link]").forEach((element) => {
 });
 
 document.querySelectorAll("[data-services-link]").forEach((element) => {
-  element.href = `${localizedPath(locale, "services")}#services`;
+  element.href = "#services";
 });
 
 document.querySelectorAll("[data-lang]").forEach((element) => {
