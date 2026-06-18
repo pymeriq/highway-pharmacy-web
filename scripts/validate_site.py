@@ -116,6 +116,8 @@ required_images = [
     "recetario.jpg",
     "interior-general.jpg",
     "interior-general1.jpg",
+    "jugueteria-header.png",
+    "jugueteria-shelf.jpg",
     "regalo.jpg",
     "regalo1.jpg",
     "regalo2.jpg",
@@ -246,6 +248,16 @@ banned_refs = (
     "ai-generated",
 )
 check(not any(ref in deploy_text.lower() for ref in banned_refs), "no generated or stock image references remain")
+ecommerce_refs = (
+    "shop " + "online",
+    "comprar " + "en línea",
+    "online " + "store",
+    "tienda " + "en línea",
+    "shopping " + "experience",
+    "compra " + "en línea",
+    "sin " + "receta",
+)
+check(not any(ref in deploy_text.lower() for ref in ecommerce_refs), "no ecommerce wording or old Spanish OTC wording remains")
 check(styles_css.count("{") == styles_css.count("}"), "CSS braces are balanced")
 
 if ERRORS:

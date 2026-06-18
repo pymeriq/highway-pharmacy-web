@@ -58,6 +58,8 @@ const content = {
     driveImageAlt: "Autofarmacia estilo servicarro de Highway Pharmacy",
     interiorMainAlt: "Interior de Highway Pharmacy con productos de salud y equipo médico",
     interiorSecondAlt: "Interior de Highway Pharmacy con artículos de conveniencia y temporada",
+    toysBody: "Mucho más que una farmacia. Nuestra juguetería ofrece juguetes, regalos y artículos de temporada para niños y toda la familia. Durante todo el año encontrarás opciones para cumpleaños, celebraciones especiales, Navidad y Día de Reyes.",
+    toysImageAlt: "Juguetería de Highway Pharmacy con juguetes y artículos para la familia",
     giftImageAlt: "Arreglo de regalo preparado en Highway Pharmacy",
     promosEyebrow: "Siempre hay algo nuevo",
     promosTitle: "Promociones, detalles y bienestar.",
@@ -99,6 +101,7 @@ const content = {
     sendMessage: "Enviar mensaje",
     formNote: "Este formulario abre tu aplicación de correo. No envía ni almacena mensajes en este sitio.",
     phone: "Teléfono",
+    fax: "Fax",
     visitUs: "Visítanos en",
     weekdays: "Lunes – Viernes",
     saturday: "Sábado",
@@ -175,6 +178,8 @@ const content = {
     driveImageAlt: "Highway Pharmacy servicarro-style drive-through pharmacy",
     interiorMainAlt: "Highway Pharmacy interior with health products and medical equipment",
     interiorSecondAlt: "Highway Pharmacy interior with convenience and seasonal products",
+    toysBody: "More than a pharmacy. Our Juguetería offers toys, gifts, and seasonal favorites for children and the whole family. Find options year-round for birthdays, special occasions, Christmas, and Three Kings Day.",
+    toysImageAlt: "Highway Pharmacy Juguetería toy shelves with gifts and family items",
     giftImageAlt: "Gift arrangement prepared at Highway Pharmacy",
     promosEyebrow: "There is always something new",
     promosTitle: "Promotions, thoughtful gifts, and wellness.",
@@ -216,6 +221,7 @@ const content = {
     sendMessage: "Send message",
     formNote: "This form opens your email application. It does not send or store messages on this website.",
     phone: "Phone",
+    fax: "Fax",
     visitUs: "Visit us at",
     weekdays: "Monday – Friday",
     saturday: "Saturday",
@@ -250,6 +256,7 @@ const icons = {
   syringe: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m14 4 6 6M17 3l4 4M6 12l6 6M5 19l-2 2M8 20 4 16l9-9 4 4-9 9Z"/></svg>',
   calendar: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18M8 14h.01M12 14h.01M16 14h.01M8 17h.01M12 17h.01"/></svg>',
   mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>',
+  fax: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 9V3h10v6M6 17H4a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2"/><path d="M7 14h10v7H7zM17 9H7M17 6H7M18 12h.01"/></svg>',
   arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M14 7l5 5-5 5"/></svg>'
 };
 

@@ -891,6 +891,48 @@ textarea {
   text-transform: uppercase;
 }
 
+.toys-section {
+  padding-block: 80px;
+  background:
+    radial-gradient(circle at 92% 18%, rgba(223, 39, 53, 0.08), transparent 28%),
+    var(--cream);
+}
+
+.toys-grid {
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 65px;
+  align-items: center;
+}
+
+.toys-copy {
+  display: grid;
+  align-content: center;
+  gap: 24px;
+}
+
+.toys-title-art {
+  width: min(100%, 420px);
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 18px 35px rgba(6, 45, 85, 0.12));
+}
+
+.toys-copy p {
+  max-width: 510px;
+  margin: 0;
+  color: #4f5f6f;
+  font-size: 13px;
+  line-height: 1.9;
+}
+
+.toys-photo {
+  min-height: 430px;
+  margin: 0;
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+}
+
 .department-grid {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
@@ -1921,7 +1963,9 @@ textarea {
 
   .hero-description {
     max-width: 450px;
-    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 14px;
+    line-height: 1.75;
   }
 
   .hero-hours,
@@ -1958,11 +2002,11 @@ textarea {
   }
 
   .trust-grid strong {
-    font-size: 9px;
+    font-size: 10px;
   }
 
   .trust-grid small {
-    font-size: 7px;
+    font-size: 9px;
   }
 
   .section {
@@ -2010,6 +2054,47 @@ textarea {
     margin-bottom: 18px;
   }
 
+  .feature-card p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .feature-main p,
+  .feature-main li,
+  .feature-drive p {
+    color: rgba(255, 255, 255, 0.84);
+  }
+
+  .feature-main li {
+    align-items: flex-start;
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .card-kicker {
+    font-size: 10px !important;
+  }
+
+  .feature-pill,
+  .promo-label {
+    font-size: 9px;
+  }
+
+  .mini-services span {
+    font-size: 10px;
+    line-height: 1.35;
+  }
+
+  .intro-body p,
+  .department-copy p,
+  .section-summary,
+  .story-heading > p,
+  .contact-copy > p,
+  .pharmacist-card p {
+    font-size: 13px;
+    line-height: 1.8;
+  }
+
   .department-visual {
     min-height: 390px;
   }
@@ -2054,6 +2139,33 @@ textarea {
     min-height: 280px;
   }
 
+  .inside-grid figcaption {
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  .toys-section {
+    padding-block: 65px;
+  }
+
+  .toys-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .toys-title-art {
+    width: min(100%, 330px);
+  }
+
+  .toys-copy p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .toys-photo {
+    min-height: 310px;
+  }
+
   .promo-grid {
     grid-template-columns: 1fr;
   }
@@ -2070,6 +2182,15 @@ textarea {
 
   .promo-wide h3 {
     font-size: 34px;
+  }
+
+  .promo-card p {
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+  .promo-wide p {
+    color: rgba(255, 255, 255, 0.82);
   }
 
   .gift-gallery {
@@ -2091,6 +2212,16 @@ textarea {
   .timeline article {
     grid-template-columns: 55px 1fr;
     gap: 12px;
+  }
+
+  .timeline h3 {
+    font-size: 27px;
+  }
+
+  .timeline p {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 12px;
+    line-height: 1.75;
   }
 
   .values-grid {
@@ -2127,8 +2258,36 @@ textarea {
     padding: 27px;
   }
 
+  .contact-methods small,
+  .visit-top small {
+    font-size: 9px;
+  }
+
+  .contact-methods strong {
+    font-size: 13px;
+  }
+
+  .visit-card address {
+    color: rgba(255, 255, 255, 0.74);
+    font-size: 12px;
+  }
+
+  .hours-table div {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
   .form-row {
     grid-template-columns: 1fr;
+  }
+
+  .quick-form input,
+  .quick-form textarea {
+    font-size: 12px;
+  }
+
+  .form-note {
+    font-size: 10px;
   }
 
   .footer-grid {
@@ -2154,9 +2313,20 @@ textarea {
     align-items: flex-start;
   }
 
+  .footer-grid p,
+  .footer-grid > div a {
+    font-size: 11px;
+    line-height: 1.7;
+  }
+
+  .footer-grid h3 {
+    font-size: 9px;
+  }
+
   .footer-bottom {
     flex-direction: column;
     gap: 8px;
+    font-size: 10px;
   }
 
   .mobile-actions {
