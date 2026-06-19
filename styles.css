@@ -1772,6 +1772,24 @@ textarea {
     line-height: 1.72;
   }
 
+  .service-feature-grid .feature-number,
+  .service-feature-grid .feature-icon {
+    display: none;
+  }
+
+  .feature-main {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 0;
+  }
+
+  .feature-main > div {
+    width: 100%;
+    max-width: 390px;
+  }
+
   .feature-main::after {
     background:
       linear-gradient(90deg, rgba(3, 29, 55, 0.96) 0%, rgba(3, 29, 55, 0.88) 42%, rgba(3, 29, 55, 0.38) 74%, rgba(3, 29, 55, 0.14) 100%),
