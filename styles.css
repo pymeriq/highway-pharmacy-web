@@ -1697,6 +1697,207 @@ textarea {
   transform: none;
 }
 
+@media (min-width: 781px) {
+  .announcement {
+    font-size: 14.5px;
+  }
+
+  .announcement-inner {
+    height: 38px;
+  }
+
+  .site-nav {
+    font-size: 14.5px;
+  }
+
+  .site-nav .nav-shop {
+    padding: 13px 18px;
+  }
+
+  .language-switch {
+    font-size: 13.5px;
+  }
+
+  .eyebrow {
+    font-size: 12.5px;
+  }
+
+  .hero-description {
+    max-width: 560px;
+    font-size: 18px;
+    line-height: 1.72;
+  }
+
+  .button {
+    min-height: 52px;
+    padding-inline: 24px;
+    font-size: 14px;
+  }
+
+  .hero-hours small,
+  .hero-scroll,
+  .card-kicker {
+    font-size: 11px !important;
+  }
+
+  .hero-hours strong {
+    font-size: 14.5px;
+  }
+
+  .trust-grid strong {
+    font-size: 13px;
+  }
+
+  .trust-grid small {
+    color: rgba(255, 255, 255, 0.66);
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  .intro-body p,
+  .department-copy > p,
+  .contact-copy > p {
+    font-size: 17px;
+    line-height: 1.78;
+  }
+
+  .text-link {
+    font-size: 13.5px;
+  }
+
+  .feature-card p,
+  .section-summary,
+  .story-heading > p {
+    font-size: 15.5px;
+    line-height: 1.72;
+  }
+
+  .feature-main li {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .feature-pill,
+  .mini-services span {
+    font-size: 11.5px;
+  }
+
+  .inside-grid figcaption {
+    font-size: 11.5px;
+    line-height: 1.35;
+  }
+
+  .toys-copy p {
+    font-size: 17px;
+    line-height: 1.78;
+  }
+
+  .care-service-card strong {
+    font-size: 16.5px;
+  }
+
+  .promo-card p,
+  .shop-card p {
+    font-size: 14.5px;
+    line-height: 1.68;
+  }
+
+  .promo-label {
+    font-size: 10.5px;
+  }
+
+  .timeline article > span {
+    font-size: 24px;
+  }
+
+  .timeline h3 {
+    font-size: 31px;
+  }
+
+  .timeline p {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 14.5px;
+    line-height: 1.7;
+  }
+
+  .values-grid span {
+    font-size: 20px;
+  }
+
+  .coming-soon {
+    font-size: 11.5px;
+  }
+
+  .quick-form input,
+  .quick-form textarea {
+    font-size: 13.5px;
+  }
+
+  .form-note {
+    font-size: 11.5px;
+  }
+
+  .contact-methods small,
+  .visit-top small {
+    font-size: 11.5px;
+  }
+
+  .contact-methods strong {
+    font-size: 15.5px;
+  }
+
+  .visit-top strong {
+    font-size: 26px;
+  }
+
+  .visit-card address {
+    font-size: 14.5px;
+    line-height: 1.72;
+  }
+
+  .hours-table div {
+    font-size: 12.5px;
+  }
+
+  .footer-logo-link {
+    margin-bottom: 16px;
+    padding: 15px 18px;
+  }
+
+  .footer-logo {
+    width: 300px;
+  }
+
+  .footer-grid p {
+    font-size: 13px;
+    line-height: 1.68;
+  }
+
+  .footer-grid h3 {
+    font-size: 11.5px;
+  }
+
+  .footer-grid > div a {
+    font-size: 12.5px;
+  }
+
+  .footer-bottom {
+    font-size: 11.5px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .header-inner {
+    height: 96px;
+    gap: 24px;
+  }
+
+  .brand-logo {
+    width: 300px;
+    height: 66px;
+  }
+}
+
 @media (max-width: 1000px) {
   .site-nav {
     gap: 16px;
