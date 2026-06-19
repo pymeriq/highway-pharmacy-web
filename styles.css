@@ -1124,6 +1124,15 @@ textarea {
   line-height: 1.7;
 }
 
+.promo-card-photo {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 .promo-wide {
   min-height: 365px;
   display: flex;
@@ -1192,6 +1201,50 @@ textarea {
 
 .promo-soft {
   background: var(--cream);
+}
+
+.promo-image-card {
+  color: white;
+  border: 0;
+  background: var(--navy);
+}
+
+.promo-image-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(0deg, rgba(3, 29, 55, 0.94), rgba(3, 29, 55, 0.58) 60%, rgba(3, 29, 55, 0.22));
+}
+
+.promo-image-card.image-failed::before {
+  display: none;
+}
+
+.promo-image-card > :not(.promo-card-photo) {
+  position: relative;
+  z-index: 2;
+}
+
+.promo-image-card h3 {
+  color: white;
+}
+
+.promo-image-card p {
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.promo-image-card .round-icon {
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+}
+
+.promo-image-card .promo-label-blue,
+.promo-image-card .promo-label-red {
+  color: white;
+  background: rgba(223, 39, 53, 0.82);
 }
 
 .round-icon {
@@ -1778,8 +1831,9 @@ textarea {
   }
 
   .brand-logo {
-    width: 140px;
-    height: 34px;
+    width: clamp(140px, 43vw, 176px);
+    height: auto;
+    max-height: 40px;
   }
 
   .brand-fallback strong {
@@ -1795,6 +1849,7 @@ textarea {
     height: 36px;
     display: grid;
     place-content: center;
+    flex: 0 0 36px;
     gap: 4px;
     margin-left: auto;
     padding: 0;
@@ -1940,6 +1995,7 @@ textarea {
     display: grid;
     width: 35px;
     height: 35px;
+    flex: 0 0 35px;
     place-items: center;
     color: white;
     border-radius: 50%;

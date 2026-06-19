@@ -28,7 +28,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="/styles.css?v=20260618-3" />
+    <link rel="stylesheet" href="/styles.css?v=20260618-4" />
     <title>Highway Pharmacy | Pharmacy in Santa Isabel</title>
     <script type="application/ld+json">
       {
@@ -392,13 +392,15 @@
                 </a>
               </div>
             </article>
-            <article class="promo-card promo-small reveal">
+            <article class="promo-card promo-small promo-image-card reveal" data-fallback-copy="imageUnavailable">
+              <img class="promo-card-photo" src="/assets/vacunacion.jpg" alt="" loading="lazy" onerror="handleImageError(this)" />
               <span class="round-icon" data-icon="syringe"></span>
               <span class="promo-label promo-label-blue" data-copy="health"></span>
               <h3 data-copy="promoTwoTitle"></h3>
               <p data-copy="promoTwoBody"></p>
             </article>
-            <article class="promo-card promo-small promo-soft reveal">
+            <article class="promo-card promo-small promo-soft promo-image-card reveal" data-fallback-copy="imageUnavailable">
+              <img class="promo-card-photo" src="/assets/evento.jpg" alt="" loading="lazy" onerror="handleImageError(this)" />
               <span class="round-icon red-round" data-icon="calendar"></span>
               <span class="promo-label promo-label-red" data-copy="community"></span>
               <h3 data-copy="promoThreeTitle"></h3>
@@ -553,6 +555,6 @@
       <a href="https://www.google.com/maps/search/?api=1&query=Highway+Pharmacy+Santa+Isabel+PR" target="_blank" rel="noreferrer"><span data-icon="pin"></span><small data-copy="map"></small></a>
     </nav>
 
-    <script src="/app.js?v=20260618-3"></script>
+    <script src="/app.js?v=20260618-4"></script>
   </body>
 </html>
