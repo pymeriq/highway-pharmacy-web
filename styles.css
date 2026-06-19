@@ -1866,6 +1866,10 @@ textarea {
       linear-gradient(90deg, rgba(3, 29, 55, 0.58), rgba(3, 29, 55, 0.12));
   }
 
+  .promo-image-card .round-icon {
+    display: none;
+  }
+
   .promo-image-card p {
     color: rgba(255, 255, 255, 0.94);
     text-shadow: 0 2px 14px rgba(0, 0, 0, 0.58);
