@@ -939,8 +939,8 @@ textarea {
 
 .department-grid {
   display: grid;
-  grid-template-columns: 0.9fr 1.1fr;
-  gap: 85px;
+  grid-template-columns: 0.9fr 1.05fr;
+  gap: 72px;
   align-items: center;
 }
 
@@ -948,139 +948,55 @@ textarea {
   margin-bottom: 23px;
 }
 
-.department-stats {
-  display: flex;
-  gap: 35px;
-  margin: 35px 0;
+.department-copy .button {
+  margin-top: 10px;
 }
 
-.department-stats div {
+.pharmacy-care-panel {
   display: grid;
-  gap: 2px;
-}
-
-.department-stats strong {
-  color: var(--red);
-  font-family: "DM Serif Display", Georgia, serif;
-  font-size: 33px;
-  font-weight: 400;
-}
-
-.department-stats .community-stat strong {
-  letter-spacing: -0.035em;
-}
-
-.department-stats .community-stat span {
-  font-size: 11px;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-.department-stats span {
-  color: var(--gray);
-  font-size: 8px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.department-visual {
-  position: relative;
-  min-height: 470px;
-  display: grid;
-  place-items: center;
-}
-
-.visual-orbit {
-  position: absolute;
-  border: 1px solid #d7e2e7;
-  border-radius: 50%;
-}
-
-.orbit-one {
-  width: 390px;
-  height: 390px;
-}
-
-.orbit-two {
-  width: 520px;
-  height: 520px;
-  border-style: dashed;
-}
-
-.pharmacist-card {
-  position: relative;
-  z-index: 2;
-  width: 310px;
-  min-height: 330px;
-  display: grid;
-  place-content: center;
-  padding: 45px;
-  text-align: center;
-  border-radius: 46% 46% 17px 17px;
-  background: white;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(237, 245, 250, 0.92)),
+    var(--white);
   box-shadow: var(--shadow);
 }
 
-.pharmacist-icon {
-  width: 78px;
-  height: 78px;
+.care-service-card {
+  min-height: 165px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 24px;
+  border: 1px solid #dce7ef;
+  border-radius: 14px;
+  background: white;
+}
+
+.care-service-card > span {
+  width: 46px;
+  height: 46px;
   display: grid;
   place-items: center;
-  margin: 0 auto 24px;
-  color: white;
-  border-radius: 50%;
-  background: var(--navy);
-}
-
-.pharmacist-icon svg {
-  width: 34px;
-}
-
-.pharmacist-card strong {
-  font-family: "DM Serif Display", Georgia, serif;
-  font-size: 27px;
-  font-weight: 400;
-}
-
-.pharmacist-card p {
-  color: var(--gray);
-  font-size: 10px;
-  line-height: 1.7;
-}
-
-.floating-note {
-  position: absolute;
-  z-index: 3;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  padding: 11px 14px;
-  color: var(--navy);
-  border-radius: 8px;
-  background: white;
-  box-shadow: 0 15px 35px rgba(6, 45, 85, 0.11);
-  font-size: 9px;
-  font-weight: 700;
-}
-
-.floating-note span:first-child {
   color: var(--red);
+  border-radius: 12px;
+  background: #f9e8e9;
 }
 
-.floating-note svg {
-  width: 17px;
-  height: 17px;
+.care-service-card svg {
+  width: 21px;
+  height: 21px;
 }
 
-.note-one {
-  top: 24%;
-  right: 0;
-}
-
-.note-two {
-  bottom: 20%;
-  left: 0;
+.care-service-card strong {
+  color: var(--navy);
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.35;
 }
 
 .section-top {
@@ -2189,7 +2105,6 @@ textarea {
   .section-summary,
   .story-heading > p,
   .contact-copy > p,
-  .pharmacist-card p,
   .toys-copy p,
   .promo-card p,
   .timeline p,
@@ -2207,48 +2122,35 @@ textarea {
     line-height: 1.1;
   }
 
-  .department-stats {
-    gap: 24px;
-    flex-wrap: wrap;
+  .department-copy .button {
+    margin-top: 4px;
   }
 
-  .department-stats strong {
-    font-size: 31px;
+  .pharmacy-care-panel {
+    grid-template-columns: 1fr;
+    gap: 11px;
+    padding: 13px;
+    border-radius: 16px;
   }
 
-  .department-stats span {
-    font-size: 8.5px;
-    line-height: 1.25;
+  .care-service-card {
+    min-height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    padding: 16px;
   }
 
-  .department-visual {
-    min-height: 390px;
+  .care-service-card > span {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
   }
 
-  .orbit-one {
-    width: 320px;
-    height: 320px;
-  }
-
-  .orbit-two {
-    width: 380px;
-    height: 380px;
-  }
-
-  .pharmacist-card {
-    width: 260px;
-    min-height: 290px;
-    padding: 35px;
-  }
-
-  .note-one {
-    top: 20%;
-    right: -5px;
-  }
-
-  .note-two {
-    bottom: 13%;
-    left: -5px;
+  .care-service-card strong {
+    font-size: 13px;
+    line-height: 1.35;
   }
 
   .section-top {

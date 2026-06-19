@@ -276,31 +276,29 @@
         <div class="shell department-grid">
           <div class="department-copy reveal">
             <div class="eyebrow" data-copy="departmentEyebrow"></div>
-            <h2 data-copy="departmentTitle"></h2>
+            <h2 id="pharmacy-consultation-title" data-copy="departmentTitle"></h2>
             <p data-copy="departmentBody"></p>
-            <div class="department-stats">
-              <div><strong>22+</strong><span data-copy="years"></span></div>
-              <div><strong>6</strong><span data-copy="daysWeek"></span></div>
-              <div class="community-stat"><strong data-copy="communityStatValue"></strong> <span data-copy="family"></span></div>
-            </div>
             <a class="button button-navy" href="tel:+17878456272">
               <span data-icon="phone"></span><span data-copy="speakTeam"></span>
             </a>
           </div>
-          <div class="department-visual reveal">
-            <div class="visual-orbit orbit-one"></div>
-            <div class="visual-orbit orbit-two"></div>
-            <div class="pharmacist-card">
-              <span class="pharmacist-icon" data-icon="cross"></span>
-              <strong data-copy="careTitle"></strong>
-              <p data-copy="careBody"></p>
-            </div>
-            <div class="floating-note note-one">
-              <span data-icon="shield"></span><span data-copy="vaccines"></span>
-            </div>
-            <div class="floating-note note-two">
-              <span data-icon="delivery"></span><span data-copy="delivery"></span>
-            </div>
+          <div class="pharmacy-care-panel reveal" aria-labelledby="pharmacy-consultation-title">
+            <article class="care-service-card">
+              <span data-icon="rx"></span>
+              <strong data-copy="careServiceConsultation"></strong>
+            </article>
+            <article class="care-service-card">
+              <span data-icon="syringe"></span>
+              <strong data-copy="careServiceVaccination"></strong>
+            </article>
+            <article class="care-service-card">
+              <span data-icon="delivery"></span>
+              <strong data-copy="careServiceDelivery"></strong>
+            </article>
+            <article class="care-service-card">
+              <span data-icon="shield"></span>
+              <strong data-copy="careServiceEquipment"></strong>
+            </article>
           </div>
         </div>
       </section>
