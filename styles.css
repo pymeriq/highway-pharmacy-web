@@ -95,6 +95,11 @@ textarea {
   gap: 10px;
 }
 
+.announcement-inner span,
+.announcement-inner a {
+  white-space: nowrap;
+}
+
 .announcement-inner a {
   margin-left: 10px;
 }
@@ -2172,6 +2177,7 @@ textarea {
 
   .announcement-inner {
     justify-content: center;
+    gap: 7px;
   }
 
   #announcement-message,
@@ -2179,8 +2185,13 @@ textarea {
     display: none;
   }
 
+  .announcement {
+    font-size: 11.5px;
+    letter-spacing: 0.02em;
+  }
+
   .announcement-inner a {
-    margin-left: 4px;
+    margin-left: 2px;
   }
 
   .header-inner {

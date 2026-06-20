@@ -373,12 +373,16 @@ document.querySelector("[data-list='pharmacyList']").innerHTML = t.pharmacyList.
 document.querySelector("[data-mini-services]").innerHTML = t.miniServices.map((item) => `<span>${item}</span>`).join("");
 document.querySelector("[data-values]").innerHTML = t.values.map((item, index) => `${index ? "<i></i>" : ""}<span>${item}</span>`).join("");
 
-const day = new Date().getDay();
-const isSunday = day === 0;
-const saturday = day === 6;
-const hours = isSunday ? t.closed : saturday ? "8:00 AM – 4:45 PM" : "8:00 AM – 6:45 PM";
-document.querySelector("#today-hours").textContent = hours;
-document.querySelector("#open-status").textContent = isSunday ? t.announcementClosed : t.announcementOpen;
+function getTodaySchedule(day, copy) {
+  if (day === 0) return { hours: copy.closed, status: copy.announcementClosed };
+
+  const hours = day === 6 ? "8:00 AM – 4:45 PM" : "8:00 AM – 6:45 PM";
+  return { hours, status: `${copy.announcementOpen} · ${hours}` };
+}
+
+const todaySchedule = getTodaySchedule(new Date().getDay(), t);
+document.querySelector("#today-hours").textContent = todaySchedule.hours;
+document.querySelector("#open-status").textContent = todaySchedule.status;
 document.querySelector("#announcement-message").textContent = t.announcementMessage;
 const yearElement = document.querySelector("#year");
 if (yearElement) yearElement.textContent = new Date().getFullYear();
