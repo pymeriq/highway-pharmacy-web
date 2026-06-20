@@ -1041,6 +1041,67 @@ textarea {
   line-height: 1.65;
 }
 
+.promo-shopper {
+  grid-column: 1 / -1;
+  min-height: 355px;
+  display: grid;
+  grid-template-columns: minmax(210px, 0.42fr) minmax(0, 1fr);
+  gap: 34px;
+  align-items: center;
+  padding: 24px;
+  color: white;
+  border: 0;
+  background:
+    radial-gradient(circle at 92% 18%, rgba(223, 39, 53, 0.22), transparent 30%),
+    linear-gradient(135deg, var(--navy-deep), var(--navy));
+  box-shadow: var(--shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.promo-shopper:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 28px 80px rgba(6, 45, 85, 0.2);
+}
+
+.shopper-cover {
+  width: min(100%, 300px);
+  aspect-ratio: 0.91;
+  margin: 0;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 20px 46px rgba(0, 0, 0, 0.26);
+}
+
+.shopper-cover img {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.shopper-copy {
+  max-width: 690px;
+}
+
+.shopper-copy h3 {
+  max-width: 680px;
+  color: white;
+  font-size: clamp(42px, 5vw, 66px);
+  letter-spacing: -0.03em;
+}
+
+.shopper-copy p {
+  max-width: 570px;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.shopper-button {
+  width: fit-content;
+  margin-top: 18px;
+  border: 0;
+}
+
 .promo-card-photo {
   position: absolute;
   inset: 0;
@@ -2632,6 +2693,32 @@ textarea {
 
   .promo-grid {
     grid-template-columns: 1fr;
+  }
+
+  .promo-shopper {
+    grid-template-columns: 1fr;
+    gap: 22px;
+    min-height: auto;
+    padding: 24px;
+  }
+
+  .shopper-cover {
+    width: min(100%, 310px);
+    justify-self: center;
+  }
+
+  .shopper-copy h3 {
+    font-size: var(--mobile-section-title);
+    line-height: 1;
+  }
+
+  .shopper-copy p {
+    font-size: var(--mobile-body);
+    line-height: var(--mobile-body-line);
+  }
+
+  .shopper-button {
+    margin-top: 14px;
   }
 
   .promo-wide {
