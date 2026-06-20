@@ -1367,25 +1367,6 @@ textarea {
   line-height: 1.78;
 }
 
-.credential-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 26px;
-}
-
-.credential-pills span {
-  padding: 10px 13px;
-  color: var(--navy);
-  border: 1px solid #dce5eb;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.82);
-  font-size: 11px;
-  font-weight: 800;
-  line-height: 1.25;
-  box-shadow: 0 10px 24px rgba(6, 45, 85, 0.08);
-}
-
 .values-section {
   padding-block: 30px;
   background: var(--red);
@@ -1852,10 +1833,6 @@ textarea {
 
   .pharmacist-subtitle {
     font-size: 17px;
-  }
-
-  .credential-pills span {
-    font-size: 12px;
   }
 
   .text-link {
@@ -2730,16 +2707,6 @@ textarea {
   .pharmacist-body {
     gap: 12px;
     margin-top: 18px;
-  }
-
-  .credential-pills {
-    gap: 9px;
-    margin-top: 22px;
-  }
-
-  .credential-pills span {
-    padding: 9px 11px;
-    font-size: 10.5px;
   }
 
   .values-grid {
