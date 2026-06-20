@@ -602,6 +602,7 @@ textarea {
 .section-top h2,
 .department-copy h2,
 .story-heading h2,
+.pharmacist-copy h2,
 .contact-copy h2,
 .shop-card h2 {
   max-width: 690px;
@@ -1312,6 +1313,79 @@ textarea {
   padding-bottom: 0;
 }
 
+.pharmacist-section {
+  background:
+    radial-gradient(circle at 8% 12%, rgba(120, 165, 201, 0.16), transparent 30%),
+    linear-gradient(135deg, #fff, var(--cream));
+}
+
+.pharmacist-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.82fr) minmax(0, 1.18fr);
+  gap: 64px;
+  align-items: center;
+}
+
+.pharmacist-photo {
+  min-height: 560px;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+}
+
+.pharmacist-photo img {
+  object-position: center top;
+}
+
+.pharmacist-copy {
+  max-width: 720px;
+}
+
+.pharmacist-copy h2 {
+  margin-top: 16px;
+}
+
+.pharmacist-subtitle {
+  margin: 18px 0 0;
+  color: var(--red-dark);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.55;
+}
+
+.pharmacist-body {
+  display: grid;
+  gap: 13px;
+  margin-top: 24px;
+}
+
+.pharmacist-body p {
+  margin: 0;
+  color: #4f5f6f;
+  font-size: 14.5px;
+  line-height: 1.78;
+}
+
+.credential-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+}
+
+.credential-pills span {
+  padding: 10px 13px;
+  color: var(--navy);
+  border: 1px solid #dce5eb;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  font-size: 11px;
+  font-weight: 800;
+  line-height: 1.25;
+  box-shadow: 0 10px 24px rgba(6, 45, 85, 0.08);
+}
+
 .values-section {
   padding-block: 30px;
   background: var(--red);
@@ -1770,9 +1844,18 @@ textarea {
 
   .intro-body p,
   .department-copy > p,
+  .pharmacist-body p,
   .contact-copy > p {
     font-size: 17px;
     line-height: 1.78;
+  }
+
+  .pharmacist-subtitle {
+    font-size: 17px;
+  }
+
+  .credential-pills span {
+    font-size: 12px;
   }
 
   .text-link {
@@ -2313,6 +2396,7 @@ textarea {
   .split-intro,
   .department-grid,
   .story-grid,
+  .pharmacist-grid,
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 35px;
@@ -2325,6 +2409,7 @@ textarea {
   .section-heading h2,
   .section-top h2,
   .story-heading h2,
+  .pharmacist-copy h2,
   .contact-copy h2,
   .shop-card h2 {
     font-size: var(--mobile-section-title);
@@ -2448,6 +2533,7 @@ textarea {
   .department-copy p,
   .section-summary,
   .story-heading > p,
+  .pharmacist-body p,
   .contact-copy > p,
   .toys-copy p,
   .promo-card p,
@@ -2618,6 +2704,42 @@ textarea {
 
   .timeline p {
     color: rgba(255, 255, 255, 0.68);
+  }
+
+  .pharmacist-grid {
+    gap: 28px;
+  }
+
+  .pharmacist-photo {
+    width: 100%;
+    min-height: auto;
+    aspect-ratio: 4 / 5;
+    border-radius: 18px;
+  }
+
+  .pharmacist-copy {
+    max-width: none;
+  }
+
+  .pharmacist-subtitle {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .pharmacist-body {
+    gap: 12px;
+    margin-top: 18px;
+  }
+
+  .credential-pills {
+    gap: 9px;
+    margin-top: 22px;
+  }
+
+  .credential-pills span {
+    padding: 9px 11px;
+    font-size: 10.5px;
   }
 
   .values-grid {
