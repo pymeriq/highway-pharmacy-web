@@ -1294,6 +1294,20 @@ textarea {
   line-height: 1.75;
 }
 
+.timeline-photo {
+  width: min(100%, 320px);
+  aspect-ratio: 4 / 5;
+  margin: 18px 0 2px;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.2);
+}
+
+.timeline-photo img {
+  object-position: center;
+}
+
 .timeline .timeline-now {
   padding-bottom: 0;
 }
