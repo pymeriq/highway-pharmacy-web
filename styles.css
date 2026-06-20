@@ -2340,6 +2340,12 @@ textarea {
     grid-template-columns: 1fr;
   }
 
+  .service-feature-grid .feature-number,
+  .service-feature-grid .feature-icon,
+  .promo-image-card .round-icon {
+    display: none;
+  }
+
   .feature-card,
   .feature-main {
     grid-column: auto;
@@ -2349,6 +2355,19 @@ textarea {
 
   .feature-main {
     display: flex;
+    align-items: flex-start;
+  }
+
+  .feature-main::after {
+    background:
+      linear-gradient(90deg, rgba(3, 29, 55, 0.96) 0%, rgba(3, 29, 55, 0.88) 42%, rgba(3, 29, 55, 0.38) 74%, rgba(3, 29, 55, 0.14) 100%),
+      linear-gradient(0deg, rgba(3, 29, 55, 0.98) 0%, rgba(3, 29, 55, 0.78) 48%, rgba(3, 29, 55, 0.2) 100%);
+  }
+
+  .feature-drive::after {
+    background:
+      linear-gradient(0deg, rgba(3, 29, 55, 0.96), rgba(3, 29, 55, 0.68) 62%, rgba(3, 29, 55, 0.18)),
+      linear-gradient(90deg, rgba(3, 29, 55, 0.8), rgba(3, 29, 55, 0.18));
   }
 
   .feature-main ul {
@@ -2366,10 +2385,35 @@ textarea {
     color: rgba(255, 255, 255, 0.84);
   }
 
+  .feature-main .card-kicker,
+  .feature-drive .card-kicker {
+    color: #f4fbff !important;
+    font-weight: 900;
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.58);
+  }
+
+  .feature-main p:not(.card-kicker) {
+    color: rgba(255, 255, 255, 0.94);
+    text-shadow: 0 2px 16px rgba(0, 0, 0, 0.62);
+  }
+
+  .feature-main h3,
+  .feature-drive h3 {
+    color: white;
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.58);
+  }
+
   .feature-main li {
     align-items: flex-start;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 12px;
     line-height: 1.5;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
+  }
+
+  .feature-drive p:not(.card-kicker) {
+    color: rgba(255, 255, 255, 0.92);
+    text-shadow: 0 2px 15px rgba(0, 0, 0, 0.58);
   }
 
   .card-kicker {
@@ -2496,6 +2540,21 @@ textarea {
   .promo-small {
     min-height: 300px;
     justify-content: flex-start;
+  }
+
+  .promo-image-card::before {
+    background:
+      linear-gradient(0deg, rgba(3, 29, 55, 0.97), rgba(3, 29, 55, 0.68) 62%, rgba(3, 29, 55, 0.28)),
+      linear-gradient(90deg, rgba(3, 29, 55, 0.58), rgba(3, 29, 55, 0.12));
+  }
+
+  .promo-image-card p {
+    color: rgba(255, 255, 255, 0.94);
+    text-shadow: 0 2px 14px rgba(0, 0, 0, 0.58);
+  }
+
+  .promo-image-card h3 {
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.56);
   }
 
   .promo-small .round-icon {
