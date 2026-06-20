@@ -2512,11 +2512,15 @@ textarea {
   }
 
   .toys-copy {
+    width: 100%;
     gap: 16px;
+    margin-inline: auto;
   }
 
   .toys-title-art {
     width: min(100%, 350px);
+    justify-self: center;
+    margin-inline: auto;
   }
 
   .toys-photo {
