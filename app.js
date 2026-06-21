@@ -377,7 +377,7 @@ function getTodaySchedule(day, copy) {
   if (day === 0) return { hours: copy.closed, status: copy.announcementClosed };
 
   const hours = day === 6 ? "8:00 AM – 4:45 PM" : "8:00 AM – 6:45 PM";
-  return { hours, status: `${copy.announcementOpen} · ${hours}` };
+  return { hours, status: `${copy.announcementOpen} • ${hours}` };
 }
 
 const todaySchedule = getTodaySchedule(new Date().getDay(), t);

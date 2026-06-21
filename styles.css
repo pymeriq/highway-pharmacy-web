@@ -101,7 +101,21 @@ textarea {
 }
 
 .announcement-inner a {
-  margin-left: 10px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: 0;
+}
+
+.announcement-phone span:first-child {
+  flex: 0 0 auto;
+  color: currentColor;
+  font-weight: 800;
+}
+
+#announcement-message,
+.announcement-dot {
+  display: none;
 }
 
 .announcement-dot {
@@ -2191,7 +2205,7 @@ textarea {
   }
 
   .announcement-inner a {
-    margin-left: 2px;
+    gap: 7px;
   }
 
   .header-inner {
