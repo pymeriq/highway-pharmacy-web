@@ -2807,6 +2807,11 @@ textarea {
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.45);
   }
 
+  .feature-main li::before {
+    flex: 0 0 4px;
+    margin-top: 0.58em;
+  }
+
   .feature-drive p:not(.card-kicker) {
     color: rgba(255, 255, 255, 0.92);
     text-shadow: 0 2px 15px rgba(0, 0, 0, 0.58);
