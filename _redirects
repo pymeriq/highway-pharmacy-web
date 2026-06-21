@@ -1,6 +1,14 @@
 # Default language
 / /es/ 302
 
+# Dedicated services pages
+/services /services/index.html 200
+/services/ /services/index.html 200
+/servicios /servicios/index.html 200
+/servicios/ /servicios/index.html 200
+/en/services /services 301
+/es/servicios /servicios 301
+
 # Language-specific SPA fallbacks. Root assets remain outside these rules.
 /en/* /en/index.html 200
 /es/* /es/index.html 200

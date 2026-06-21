@@ -2,6 +2,8 @@ const content = {
   es: {
     metaTitle: "Highway Pharmacy | Farmacia en Santa Isabel",
     metaDescription: "Farmacia en Santa Isabel con autofarmacia, vacunación, entrega de medicamentos y servicios para toda la familia.",
+    servicesMetaTitle: "Servicios | Highway Pharmacy",
+    servicesMetaDescription: "Conoce todos los servicios de Highway Pharmacy: farmacia, vacunación, autofarmacia, delivery, conveniencia, regalos y más.",
     announcementOpen: "Abierto hoy",
     announcementClosed: "Cerrado hoy",
     announcementMessage: "Autofarmacia y entrega de medicamentos disponibles",
@@ -127,6 +129,9 @@ const content = {
     footerExplore: "Explora",
     footerContact: "Contacto",
     services: "Servicios",
+    servicesPageEyebrow: "Servicios",
+    servicesPageTitle: "Todos nuestros servicios",
+    servicesPageIntro: "En Highway Pharmacy trabajamos para ofrecer mucho más que medicamentos. Conoce todos los servicios disponibles para ayudarte a cuidar tu salud, ahorrar tiempo y resolver tus necesidades diarias en un solo lugar.",
     ourStory: "Nuestra historia",
     promotions: "Promociones",
     contact: "Contacto",
@@ -137,6 +142,8 @@ const content = {
   en: {
     metaTitle: "Highway Pharmacy | Pharmacy in Santa Isabel",
     metaDescription: "Santa Isabel pharmacy with drive-through service, vaccinations, medication delivery, and convenient services for the whole family.",
+    servicesMetaTitle: "Services | Highway Pharmacy",
+    servicesMetaDescription: "Explore all Highway Pharmacy services: pharmacy care, vaccinations, drive-through pickup, delivery, convenience services, gifts, and more.",
     announcementOpen: "Open today",
     announcementClosed: "Closed today",
     announcementMessage: "Drive-through pharmacy and medication delivery available",
@@ -262,6 +269,9 @@ const content = {
     footerExplore: "Explore",
     footerContact: "Contact",
     services: "Services",
+    servicesPageEyebrow: "Services",
+    servicesPageTitle: "All our services",
+    servicesPageIntro: "At Highway Pharmacy, we work to offer much more than medications. Discover all the services available to help you care for your health, save time, and take care of your daily needs in one place.",
     ourStory: "Our story",
     promotions: "Promotions",
     contact: "Contact",
@@ -290,10 +300,10 @@ const icons = {
   arrow: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 12h14M14 7l5 5-5 5"/></svg>'
 };
 
-const localeFromPath = window.location.pathname.split("/").filter(Boolean)[0];
+const pathSegments = window.location.pathname.split("/").filter(Boolean);
+const localeFromPath = pathSegments[0];
 const localeFromQuery = new URLSearchParams(window.location.search).get("lang");
-const locale = localeFromPath === "en" || localeFromQuery === "en" ? "en" : "es";
-const t = content[locale];
+const locale = localeFromPath === "en" || localeFromPath === "services" || localeFromQuery === "en" ? "en" : "es";
 const localizedSlugs = {
   home: { es: "", en: "" },
   services: { es: "servicios", en: "services" },
@@ -302,17 +312,29 @@ const localizedSlugs = {
   contact: { es: "contacto", en: "contact" },
   shop: { es: "", en: "" }
 };
-const currentSlug = window.location.pathname.split("/").filter(Boolean)[1] || "";
+const routePaths = {
+  home: { es: "/es/", en: "/en/" },
+  services: { es: "/servicios", en: "/services" },
+  story: { es: "/es/historia", en: "/en/history" },
+  promos: { es: "/es/promociones", en: "/en/promotions" },
+  contact: { es: "/es/contacto", en: "/en/contact" },
+  shop: { es: "/es/", en: "/en/" }
+};
+const currentSlug = localeFromPath === "en" || localeFromPath === "es" ? pathSegments[1] || "" : localeFromPath || "";
 const currentPage = Object.entries(localizedSlugs).find(([, slugs]) => Object.values(slugs).includes(currentSlug))?.[0] || "home";
-const localizedPath = (targetLocale, page = currentPage) => `/${targetLocale}/${localizedSlugs[page][targetLocale]}`.replace(/\/$/, "/");
+const localizedPath = (targetLocale, page = currentPage) => routePaths[page]?.[targetLocale] || routePaths.home[targetLocale];
+const t = content[locale];
 const canonicalUrl = `https://highwaypharmacypr.com${localizedPath(locale)}`;
+const metaTitle = currentPage === "services" ? t.servicesMetaTitle : t.metaTitle;
+const metaDescription = currentPage === "services" ? t.servicesMetaDescription : t.metaDescription;
+const ogDescription = currentPage === "services" ? t.servicesPageIntro : t.heroDescription;
 
 document.documentElement.lang = locale;
-document.title = t.metaTitle;
-document.querySelector('meta[name="description"]').setAttribute("content", t.metaDescription);
+document.title = metaTitle;
+document.querySelector('meta[name="description"]').setAttribute("content", metaDescription);
 document.querySelector('link[rel="canonical"]').setAttribute("href", canonicalUrl);
-document.querySelector('meta[property="og:title"]').setAttribute("content", t.metaTitle);
-document.querySelector('meta[property="og:description"]').setAttribute("content", t.heroDescription);
+document.querySelector('meta[property="og:title"]').setAttribute("content", metaTitle);
+document.querySelector('meta[property="og:description"]').setAttribute("content", ogDescription);
 document.querySelector('meta[property="og:locale"]').setAttribute("content", locale === "es" ? "es_PR" : "en_US");
 document.querySelector('meta[property="og:locale:alternate"]').setAttribute("content", locale === "es" ? "en_US" : "es_PR");
 document.querySelector('meta[property="og:url"]').setAttribute("content", canonicalUrl);
@@ -346,7 +368,7 @@ document.querySelectorAll("[data-nav]").forEach((element) => {
   element.textContent = t.nav[key];
   const hashes = {
     home: "",
-    services: "#services",
+    services: "",
     story: "#story",
     promos: "#promotions",
     contact: "#contact",
@@ -355,12 +377,23 @@ document.querySelectorAll("[data-nav]").forEach((element) => {
   element.href = key === "shop" ? `${localizedPath(locale, "home")}#shop` : `${localizedPath(locale, key)}${hashes[key]}`;
 });
 
+document.querySelectorAll("[data-footer-nav]").forEach((element) => {
+  const key = element.dataset.footerNav;
+  const hashes = {
+    services: "",
+    story: "#story",
+    promos: "#promotions",
+    contact: "#contact"
+  };
+  element.href = key === "services" ? localizedPath(locale, "services") : `${localizedPath(locale, key)}${hashes[key]}`;
+});
+
 document.querySelectorAll("[data-home-link]").forEach((element) => {
-  element.href = `/${locale}/`;
+  element.href = localizedPath(locale, "home");
 });
 
 document.querySelectorAll("[data-services-link]").forEach((element) => {
-  element.href = "#services";
+  element.href = localizedPath(locale, "services");
 });
 
 document.querySelectorAll("[data-lang]").forEach((element) => {
@@ -369,9 +402,14 @@ document.querySelectorAll("[data-lang]").forEach((element) => {
   element.href = localizedPath(target);
 });
 
-document.querySelector("[data-list='pharmacyList']").innerHTML = t.pharmacyList.map((item) => `<li>${item}</li>`).join("");
-document.querySelector("[data-mini-services]").innerHTML = t.miniServices.map((item) => `<span>${item}</span>`).join("");
-document.querySelector("[data-values]").innerHTML = t.values.map((item, index) => `${index ? "<i></i>" : ""}<span>${item}</span>`).join("");
+const pharmacyList = document.querySelector("[data-list='pharmacyList']");
+if (pharmacyList) pharmacyList.innerHTML = t.pharmacyList.map((item) => `<li>${item}</li>`).join("");
+
+const miniServices = document.querySelector("[data-mini-services]");
+if (miniServices) miniServices.innerHTML = t.miniServices.map((item) => `<span>${item}</span>`).join("");
+
+const values = document.querySelector("[data-values]");
+if (values) values.innerHTML = t.values.map((item, index) => `${index ? "<i></i>" : ""}<span>${item}</span>`).join("");
 
 function getTodaySchedule(day, copy) {
   if (day === 0) return { hours: copy.closed, status: copy.announcementClosed };
@@ -381,9 +419,14 @@ function getTodaySchedule(day, copy) {
 }
 
 const todaySchedule = getTodaySchedule(new Date().getDay(), t);
-document.querySelector("#today-hours").textContent = todaySchedule.hours;
-document.querySelector("#open-status").textContent = todaySchedule.status;
-document.querySelector("#announcement-message").textContent = t.announcementMessage;
+const todayHours = document.querySelector("#today-hours");
+if (todayHours) todayHours.textContent = todaySchedule.hours;
+
+const openStatus = document.querySelector("#open-status");
+if (openStatus) openStatus.textContent = todaySchedule.status;
+
+const announcementMessage = document.querySelector("#announcement-message");
+if (announcementMessage) announcementMessage.textContent = t.announcementMessage;
 const yearElement = document.querySelector("#year");
 if (yearElement) yearElement.textContent = new Date().getFullYear();
 

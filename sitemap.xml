@@ -12,14 +12,14 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/en/" />
   </url>
   <url>
-    <loc>https://highwaypharmacypr.com/es/servicios</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/es/servicios" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/en/services" />
+    <loc>https://highwaypharmacypr.com/servicios</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/servicios" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/services" />
   </url>
   <url>
-    <loc>https://highwaypharmacypr.com/en/services</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/es/servicios" />
-    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/en/services" />
+    <loc>https://highwaypharmacypr.com/services</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://highwaypharmacypr.com/servicios" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://highwaypharmacypr.com/services" />
   </url>
   <url>
     <loc>https://highwaypharmacypr.com/es/historia</loc>

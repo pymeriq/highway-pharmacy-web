@@ -93,6 +93,8 @@ required_root_files = [
     "index.html",
     "en/index.html",
     "es/index.html",
+    "services/index.html",
+    "servicios/index.html",
     "styles.css",
     "app.js",
     "_redirects",
@@ -140,21 +142,35 @@ check(not any(line.startswith("/* ") for line in redirect_lines), "root assets a
 root_parser = parse_html(ROOT / "index.html")
 en_parser = parse_html(ROOT / "en/index.html")
 es_parser = parse_html(ROOT / "es/index.html")
+services_en_parser = parse_html(ROOT / "services/index.html")
+services_es_parser = parse_html(ROOT / "servicios/index.html")
 
 check(en_parser.html_lang == "en" and es_parser.html_lang == "es", "localized entry documents declare the correct language")
+check(services_en_parser.html_lang == "en" and services_es_parser.html_lang == "es", "services entry documents declare the correct language")
 check("Pharmacy in Santa Isabel" in en_parser.title, "English entry document has localized title")
 check("Farmacia en Santa Isabel" in es_parser.title, "Spanish entry document has localized title")
+check("Services" in services_en_parser.title and "Servicios" in services_es_parser.title, "services entry documents have localized titles")
 check(en_parser.meta.get(("property", "og:locale")) == "en_US", "English Open Graph locale is correct")
 check(es_parser.meta.get(("property", "og:locale")) == "es_PR", "Spanish Open Graph locale is correct")
+check(
+    services_en_parser.meta.get(("property", "og:locale")) == "en_US"
+    and services_es_parser.meta.get(("property", "og:locale")) == "es_PR",
+    "services Open Graph locales are correct",
+)
 check(
     any(link.get("rel") == "canonical" and link.get("href") == "https://highwaypharmacypr.com/en/" for link in en_parser.links)
     and any(link.get("rel") == "canonical" and link.get("href") == "https://highwaypharmacypr.com/es/" for link in es_parser.links),
     "localized canonical URLs are present",
 )
 check(
+    any(link.get("rel") == "canonical" and link.get("href") == "https://highwaypharmacypr.com/services" for link in services_en_parser.links)
+    and any(link.get("rel") == "canonical" and link.get("href") == "https://highwaypharmacypr.com/servicios" for link in services_es_parser.links),
+    "services canonical URLs are present",
+)
+check(
     all(
         any(link.get("hreflang") == lang for link in parser.links)
-        for parser in (en_parser, es_parser)
+        for parser in (en_parser, es_parser, services_en_parser, services_es_parser)
         for lang in ("en", "es", "x-default")
     ),
     "localized entry documents contain hreflang links",
@@ -167,6 +183,8 @@ deploy_text = "\n".join(
         (ROOT / "index.html").read_text(encoding="utf-8"),
         (ROOT / "en/index.html").read_text(encoding="utf-8"),
         (ROOT / "es/index.html").read_text(encoding="utf-8"),
+        (ROOT / "services/index.html").read_text(encoding="utf-8"),
+        (ROOT / "servicios/index.html").read_text(encoding="utf-8"),
         app_js,
         styles_css,
     ]
@@ -178,7 +196,17 @@ en_content = content_body.split("\n  en: {", 1)[1]
 key_pattern = re.compile(r"^    ([A-Za-z][A-Za-z0-9]*):", re.MULTILINE)
 es_keys = set(key_pattern.findall(es_content))
 en_keys = set(key_pattern.findall(en_content))
-bindings = root_parser.copy_keys | root_parser.alt_keys | root_parser.fallback_keys
+bindings = (
+    root_parser.copy_keys
+    | root_parser.alt_keys
+    | root_parser.fallback_keys
+    | services_en_parser.copy_keys
+    | services_en_parser.alt_keys
+    | services_en_parser.fallback_keys
+    | services_es_parser.copy_keys
+    | services_es_parser.alt_keys
+    | services_es_parser.fallback_keys
+)
 check(es_keys == en_keys, "EN/ES translation keys match")
 check(not (bindings - es_keys) and not (bindings - en_keys), "all HTML translation bindings exist")
 
@@ -190,11 +218,22 @@ check(
     "all required owner images are referenced",
 )
 check(
-    all(src.startswith("/assets/") for src in root_parser.image_srcs),
+    all(
+        src.startswith("/assets/")
+        for parser in (root_parser, en_parser, es_parser, services_en_parser, services_es_parser)
+        for src in parser.image_srcs
+    ),
     "all rendered image sources use root-relative /assets paths",
 )
 
-missing_anchors = sorted({href[1:] for href in root_parser.hrefs if href.startswith("#")} - root_parser.ids)
+missing_anchors = sorted(
+    {
+        f"{parser.html_lang}:{href[1:]}"
+        for parser in (root_parser, en_parser, es_parser, services_en_parser, services_es_parser)
+        for href in parser.hrefs
+        if href.startswith("#") and href[1:] not in parser.ids
+    }
+)
 check(not missing_anchors, "internal anchors resolve")
 check(
     all(route in app_js for route in ("services", "servicios", "history", "historia", "contact", "contacto", "promotions", "promociones")),
