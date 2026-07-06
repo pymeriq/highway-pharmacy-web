@@ -61,3 +61,12 @@ Official references:
 
 - [Cloudflare Pages redirects](https://developers.cloudflare.com/pages/configuration/redirects/)
 - [Cloudflare Pages local development](https://developers.cloudflare.com/pages/functions/local-development/)
+
+## Contributing — branch protection
+
+Direct pushes to `main`/`master` are blocked; use a feature branch + PR.
+
+- **Claude Code hook**: `.claude/hooks/block-push-to-main.py` (+ `.claude/settings.json`), scoped to this repo (needs `python3`).
+- **git pre-push hook**: `.githooks/pre-push`. Enable per clone: `git config core.hooksPath .githooks`. Override: `ALLOW_PUSH_TO_MAIN=1 git push …` or `git push --no-verify`.
+
+CI (`.github/workflows/ci.yml`) runs the static-site checks (site validator if present, `node --check`, HTML parse) on every PR and push to `main`.
