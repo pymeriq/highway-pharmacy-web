@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: static site checks
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Site validator (if present)
+        run: |
+          if [ -f scripts/validate_site.py ]; then python3 scripts/validate_site.py; else echo "no scripts/validate_site.py — skipping"; fi
+
+      - name: JavaScript syntax (node --check)
+        run: |
+          found=0
+          for f in $(git ls-files '*.js'); do echo "check $f"; node --check "$f"; found=1; done
+          [ "$found" = 0 ] && echo "no .js files"; echo OK
+
+      - name: HTML well-formedness (parse)
+        run: |
+          for f in $(git ls-files '*.html'); do echo "parse $f"; python3 -c "import sys,html.parser; p=html.parser.HTMLParser(); p.feed(open(sys.argv[1],encoding='utf-8',errors='replace').read())" "$f"; done
+          echo OK
