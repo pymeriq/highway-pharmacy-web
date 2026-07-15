@@ -1201,14 +1201,15 @@ textarea {
 
 .promo-shopper {
   grid-column: 1 / -1;
-  min-height: 355px;
+  min-height: auto;
   display: grid;
-  grid-template-columns: minmax(210px, 0.42fr) minmax(0, 1fr);
+  grid-template-columns: 1fr;
   gap: 34px;
-  align-items: center;
-  padding: 24px;
+  align-items: start;
+  padding: clamp(28px, 4.5vw, 54px);
   color: white;
   border: 0;
+  border-radius: 24px;
   background:
     radial-gradient(circle at 92% 18%, rgba(223, 39, 53, 0.22), transparent 30%),
     linear-gradient(135deg, var(--navy-deep), var(--navy));
@@ -1222,11 +1223,12 @@ textarea {
 }
 
 .shopper-cover {
-  width: min(100%, 300px);
+  width: min(100%, 680px);
   aspect-ratio: 0.91;
   margin: 0;
+  justify-self: center;
   border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 14px;
+  border-radius: 18px;
   background: white;
   box-shadow: 0 20px 46px rgba(0, 0, 0, 0.26);
 }
@@ -1237,26 +1239,27 @@ textarea {
 }
 
 .shopper-copy {
-  max-width: 690px;
+  max-width: 820px;
 }
 
 .shopper-copy h3 {
-  max-width: 680px;
+  max-width: 780px;
   color: white;
-  font-size: clamp(42px, 5vw, 66px);
+  font-size: clamp(50px, 6.3vw, 86px);
+  line-height: 0.98;
   letter-spacing: -0.03em;
 }
 
 .shopper-copy p {
-  max-width: 570px;
+  max-width: 780px;
   color: rgba(255, 255, 255, 0.72);
-  font-size: 15px;
-  line-height: 1.72;
+  font-size: 20px;
+  line-height: 1.65;
 }
 
 .shopper-button {
   width: fit-content;
-  margin-top: 18px;
+  margin-top: 24px;
   border: 0;
 }
 
@@ -2934,15 +2937,14 @@ textarea {
   }
 
   .promo-shopper {
-    grid-template-columns: 1fr;
     gap: 22px;
-    min-height: auto;
     padding: 24px;
+    border-radius: 15px;
   }
 
   .shopper-cover {
     width: min(100%, 310px);
-    justify-self: center;
+    border-radius: 14px;
   }
 
   .shopper-copy h3 {
